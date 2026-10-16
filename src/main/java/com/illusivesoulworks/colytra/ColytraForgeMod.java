@@ -24,7 +24,7 @@ import com.illusivesoulworks.colytra.common.crafting.ElytraAttachmentRecipe;
 import com.illusivesoulworks.colytra.common.crafting.ElytraDetachmentRecipe;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -45,10 +45,10 @@ public class ColytraForgeMod {
       DeferredRegister.createDataComponents(ColytraConstants.MOD_ID);
 
   // the elytra attached to a chestplate
-  public static final DeferredHolder<DataComponentType<?>, DataComponentType<ItemStack>> ELYTRA =
-      COMPONENTS.registerComponentType("elytra", builder -> builder
-          .persistent(ItemStack.OPTIONAL_CODEC)
-          .networkSynchronized(ItemStack.OPTIONAL_STREAM_CODEC));
+  public static final DeferredHolder<DataComponentType<?>, DataComponentType<ItemContainerContents>>
+      ELYTRA = COMPONENTS.registerComponentType("elytra", builder -> builder
+          .persistent(ItemContainerContents.CODEC)
+          .networkSynchronized(ItemContainerContents.STREAM_CODEC));
 
   static {
     RECIPE_SERIALIZERS.register(ColytraConstants.ATTACH_ELYTRA,

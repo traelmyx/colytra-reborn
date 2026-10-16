@@ -24,7 +24,9 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ElytraItem;
+import java.util.List;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.ItemContainerContents;
 
 public class ElytraTag {
 
@@ -33,11 +35,11 @@ public class ElytraTag {
   }
 
   public static ItemStack getElytra(ItemStack stack) {
-    return stack.getOrDefault(ColytraForgeMod.ELYTRA.get(), ItemStack.EMPTY).copy();
+    return stack.getOrDefault(ColytraForgeMod.ELYTRA.get(), ItemContainerContents.EMPTY).copyOne();
   }
 
   public static void setElytra(ItemStack chestStack, ItemStack elytraStack) {
-    chestStack.set(ColytraForgeMod.ELYTRA.get(), elytraStack.copy());
+    chestStack.set(ColytraForgeMod.ELYTRA.get(), ItemContainerContents.fromItems(List.of(elytraStack.copy())));
   }
 
   public static void removeElytra(ItemStack chestStack) {
