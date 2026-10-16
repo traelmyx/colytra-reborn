@@ -1,0 +1,40 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="LGPL-3.0-or-later"
+issueTrackerURL="https://github.com/traelmyx/colytra-reborn/issues"
+
+[[mods]]
+modId="colytra"
+version="${version}"
+displayName="Colytra Reborn"
+displayURL="https://github.com/traelmyx/colytra-reborn"
+logoFile="colytra_icon.png"
+authors="C4 (original), traelmyx (port)"
+credits="Based on Colytra by C4 / Illusive Soulworks"
+description='''
+Attach an elytra to any chestplate. Based on Colytra by C4.
+'''
+
+[[dependencies.colytra]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.0,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.colytra]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1,1.21.2)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.colytra]]
+modId="caelus"
+type="required"
+versionRange="[7.0.0,)"
+ordering="NONE"
+side="BOTH"
+
+[[accessTransformers]]
+file="META-INF/accesstransformer.cfg"
