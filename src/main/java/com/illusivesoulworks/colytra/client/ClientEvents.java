@@ -62,12 +62,9 @@ public class ClientEvents {
           elytraStack.getOrDefault(net.minecraft.core.component.DataComponents.ENCHANTMENTS,
               net.minecraft.world.item.enchantment.ItemEnchantments.EMPTY);
 
-      if (enchantments.showInTooltip()) {
-
-        for (var entry : enchantments.entrySet()) {
-          tooltip.add(Component.literal(" ")
-              .append(Enchantment.getFullname(entry.getKey(), entry.getIntValue())));
-        }
+      for (var entry : enchantments.entrySet()) {
+        tooltip.add(Component.literal(" ")
+            .append(Enchantment.getFullname(entry.getKey(), entry.getIntValue())));
       }
       if (ElytraTag.isUseable(chestStack, elytraStack)) {
         tooltip.add(Component.literal(" ").append((Component.translatable("item.durability",

@@ -49,9 +49,7 @@ public class ColytraForgeClientMod {
         renderer.addLayer(new ColytraLayer<>(renderer, evt.getEntityModels()));
       }
     }
-    LivingEntityRenderer renderer = evt.getRenderer(EntityType.ARMOR_STAND);
-
-    if (renderer != null) {
+    if (evt.getRenderer(EntityType.ARMOR_STAND) instanceof LivingEntityRenderer renderer) {
       renderer.addLayer(new ColytraLayer<>(renderer, evt.getEntityModels()));
     }
   }
