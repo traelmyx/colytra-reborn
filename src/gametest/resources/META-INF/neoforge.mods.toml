@@ -1,0 +1,15 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "LGPL-3.0-or-later"
+
+[[mods]]
+modId = "colytra_gametest"
+version = "${version}"
+displayName = "Colytra Tests"
+
+[[dependencies.colytra_gametest]]
+modId = "colytra"
+type = "required"
+versionRange = "*"
+ordering = "AFTER"
+side = "BOTH"
